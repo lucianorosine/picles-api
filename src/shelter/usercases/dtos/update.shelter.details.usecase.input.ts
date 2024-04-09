@@ -1,6 +1,6 @@
 export default class UpdateShelterDetailsUseCaseInput {
     name: string;
-    whatsApp: string;
+    whatsapp: string;
     email: string;
     phone: string;  
 

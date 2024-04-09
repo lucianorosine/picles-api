@@ -12,17 +12,15 @@ import UpdateShelterDetailsUseCaseInput from './usercases/dtos/update.shelter.de
 export class ShelterController {
 
     @Inject(ShelterTokens.getSheltonDetailsUseCase)
-    private readonly GetShelterDetailsUseCase: IUseCase<null, GetShelterDetailsUseCaseOutput>
+    private readonly getShelterDetailsUseCase: IUseCase<null, GetShelterDetailsUseCaseOutput>
 
     @Inject(ShelterTokens.updateSheltonDetailsUseCase)
-    private readonly UpdateShelterDetailsUseCase: IUseCase<UpdateShelterControllerInput, UpdateShelterDetailsUseCaseOutput>
-    updateShelterDetailspdateShelterDetailsUseCase: any;
-    updateShelterDetailsUseCase: any;
+    private readonly updateShelterDetailsUseCase: IUseCase<UpdateShelterControllerInput, UpdateShelterDetailsUseCaseOutput>
 
 
     @Get()
     async getShelterDetails(): Promise<GetShelterDetailsUseCaseOutput> {        
-            return await this.GetShelterDetailsUseCase.run(null)        
+            return await this.getShelterDetailsUseCase.run(null)        
     }
 
     @Put()

@@ -11,7 +11,6 @@ export default class UpdateShelterControllerInput {
     @IsString()
     @IsNotEmpty()
     @Length(10,11)
-    @IsNumber()
     phone: string
     @IsString()
     @IsEmail()
