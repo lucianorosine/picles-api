@@ -8,5 +8,4 @@ export default class CreatedPetUseCaseInput{
     constructor(data: Partial<CreatedPetUseCaseInput>){
         Object.assign(this, data);
     }
-
 }
