@@ -5,7 +5,6 @@ import { Promise } from 'mongoose';
 import CreatedPetUseCaseOutput from './usescases/dtos/create.pet.usecase.output';
 import CreatedPetUseCaseInput from './usescases/dtos/create.pet.usecase.Input';
 import PetTokens from './pet.token';
-import GetPetByIdUseCaseinput from './usescases/dtos/get.pet.by.id.usecase.Input';
 import GetpetByIdUseCaseOutput from './usescases/dtos/get.pet.by.id.usecase.output';
 import GetPetByIdUseCaseInput from './usescases/dtos/get.pet.by.id.usecase.Input';
 

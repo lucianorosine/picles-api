@@ -1,22 +1,23 @@
-import { Injectable } from "@nestjs/common";
-import IPetRepository from "./interface/pet.repository.interface";
-import { Pet } from "./schema/pet.schema";
-import { InjectModel } from "@nestjs/mongoose";
-import { Model } from "mongoose";
+import { Injectable } from "@nestjs/common"
+import IPetRepository from "./interface/pet.repository.interface"
+import { InjectModel } from "@nestjs/mongoose"
+import { Model } from "mongoose"
+import { Pet } from "./schema/pet.schema"
 
 
 @Injectable()
-export default class PetRepository implements IPetRepository{
-
+export default class PetRepository implements IPetRepository {
+    
     constructor(
         @InjectModel(Pet.name)
         private readonly petModel: Model<Pet>,
-    ){}
-    getById(id: string): Promise<Pet> {
-        throw new Error("Method not implemented.");
-    }
+      ) {}
     crate(data: Partial<Pet>): Promise<Pet> {
-        throw new Error("Method not implemented.");
+        throw new Error("Method not implemented.")
+    }
+
+    async getById(id: string): Promise<Pet> {
+        return await this.petModel.findById(id)
     }
 
     async create(data: Partial<Pet>): Promise<Pet> {
@@ -26,4 +27,5 @@ export default class PetRepository implements IPetRepository{
             updatedAt: new Date()
         })
     }
+    
 }
